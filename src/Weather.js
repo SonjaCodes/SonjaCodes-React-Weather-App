@@ -18,6 +18,7 @@ export default function Weather(props) {
       color={"#f53b9b"}
       size={120}
       aria-label="Loading Spinner"
+      timeout={3000}
     />
   );
 }
