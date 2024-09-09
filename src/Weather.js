@@ -33,19 +33,20 @@ export default function Weather() {
 
   return (
     <div className="Search">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="search-form">
         <input
           type="search"
           placeholder="Enter a city..."
-          required class ="search-form-input"
+          required
+          class="search-form-input"
           onChange={updateCity}
         />
-        <input type="submit" value="Search" />
+        <input className="search-button" type="submit" value="Search" />
       </form>
 
       {weatherOutput && (
-        <div className="weatherOutput">
-          <h4>Weather in {weatherOutput.city} currently</h4>
+        <div className="weatherOutput" class="row">
+          <h1>{weatherOutput.city}</h1>
           <ul>
             <li>Temperature: {weatherOutput.temperature}°C</li>
             <li>Description: {weatherOutput.description}</li>

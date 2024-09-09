@@ -21,7 +21,6 @@ export default function Footer() {
         rel="noreferrer">
         hosted on Netlify
       </a>
-      .{" "}
     </footer>
   );
 }

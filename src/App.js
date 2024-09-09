@@ -13,8 +13,10 @@ function App() {
             className="SonjaCodes-logo"
             alt="logo"
           />
-          <Weather city="Zurich" />
         </header>
+        <main>
+          <Weather city="Zurich" />
+        </main>
       </Container>
       <footer>
         <Footer />

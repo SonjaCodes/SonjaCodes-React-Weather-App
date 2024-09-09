@@ -13,6 +13,12 @@ body {
   border-radius: 4px;
   min-width: 370px;
   padding: 10px;
-  text-align: center;
+}
+
+.SonjaCodes-logo {
+  align-items: center;
+  display: block;
+  height: 20vmin;
+  margin: 0 auto;
 }
 

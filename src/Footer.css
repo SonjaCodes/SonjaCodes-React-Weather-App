@@ -1,7 +1,8 @@
 footer {
   color: var(--sonjacodes-brand-color-secondary);
-  text-align: center;
+  font-size: 12px;
   padding: 5px;
+  text-align: center;
 }
 
 footer a {
