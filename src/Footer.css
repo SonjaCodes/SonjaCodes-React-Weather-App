@@ -1,0 +1,9 @@
+footer {
+  color: var(--sonjacodes-brand-color-secondary);
+  text-align: center;
+  padding: 5px;
+}
+
+footer a {
+  color: var(--sonjacodes-brand-color)
+}

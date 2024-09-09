@@ -5,16 +5,21 @@ import Container from "react-bootstrap/Container";
 
 function App() {
   return (
-    <Container className="App">
-      <header className="App-header">
-        <img src="SonjaCodes Logo.png" className="SonjaCodes-logo" alt="logo" />
-        <Weather city="Zurich" />
-      </header>
-
+    <div className="App">
+      <Container className="App-Container">
+        <header className="App-header">
+          <img
+            src="SonjaCodes Logo.png"
+            className="SonjaCodes-logo"
+            alt="logo"
+          />
+          <Weather city="Zurich" />
+        </header>
+      </Container>
       <footer>
         <Footer />
       </footer>
-    </Container>
+    </div>
   );
 }
 
