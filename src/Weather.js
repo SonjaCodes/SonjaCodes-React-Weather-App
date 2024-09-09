@@ -43,19 +43,23 @@ export default function Weather() {
         />
         <input className="search-button" type="submit" value="Search" />
       </form>
-
+      <hr />
       {weatherOutput && (
         <div className="weatherOutput" class="row">
-          <h1>{weatherOutput.city}</h1>
-          <ul>
-            <li>Temperature: {weatherOutput.temperature}°C</li>
-            <li>Description: {weatherOutput.description}</li>
-            <li>Humidity: {weatherOutput.humidity}%</li>
-            <li>Wind: {weatherOutput.wind}km/h</li>
-            <li>
-              <img src={weatherOutput.icon} alt={weatherOutput.description} />
-            </li>
-          </ul>
+          <div class="col-8">
+            <h1>{weatherOutput.city}</h1>
+            <p>{weatherOutput.description}
+            <br />
+              Humidity: {weatherOutput.humidity}%, Wind: {weatherOutput.wind}
+              km/h
+            </p>
+          </div>
+
+          <div class="col-1">
+            <img src={weatherOutput.icon} alt={weatherOutput.description} />
+          </div>
+          <div class="col-2">{weatherOutput.temperature}</div>
+          <div class="col-1">°C</div>
         </div>
       )}
     </div>

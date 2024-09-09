@@ -1,11 +1,8 @@
-.Search {
-  border-bottom: 1px solid var(--sonjacodes-brand-color-secondary);
-}
-
 .search-form {
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin: 50px auto;
+
 }
 
 .search-form-input {
@@ -25,4 +22,8 @@
   color: white;
   font-size: 16px;
   width: 20%;
+}
+
+h1 {
+  font-weight: bold;
 }
