@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="../public/SonjaCodes Logo.png" className="SonjaCodes-logo" alt="logo" />
+        <img src="SonjaCodes Logo.png" className="SonjaCodes-logo" alt="logo" />
         <Weather city="Zurich" />
       </header>
 
