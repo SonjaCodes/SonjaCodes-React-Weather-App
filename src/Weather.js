@@ -4,8 +4,8 @@ import { useState } from "react";
 import { DateTime } from "luxon";
 
 export default function Weather() {
-  const [city, setCity] = useState("");
-  const [weatherOutput, setWeatherOutput] = useState(null);
+  const [city, setCity] = useState(`Zurich`);
+  const [weatherOutput, setWeatherOutput] = useState(`Zurich`);
   const date = DateTime.now().toLocaleString(DateTime.DATETIME_FULL);
 
   function displayWeatherOutput(response) {
@@ -28,7 +28,6 @@ export default function Weather() {
       axios.get(apiUrl).then(displayWeatherOutput);
     }
   }
-
   function updateCity(event) {
     setCity(event.target.value);
   }
