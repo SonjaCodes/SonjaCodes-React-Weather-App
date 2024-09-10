@@ -28,11 +28,10 @@
   font-size: 38px;
   font-weight: bold;
   line-height: 48px;
-  margin: 0;
 }
 
 .list-unstyled {
-  color: var(--sonjacodes-brand-color-secondary);
+  color: #c1c1c1;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;

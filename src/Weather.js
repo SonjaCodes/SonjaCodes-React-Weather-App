@@ -1,10 +1,12 @@
 import "./Weather.css";
 import axios from "axios";
 import { useState } from "react";
+import { DateTime } from "luxon";
 
 export default function Weather() {
   const [city, setCity] = useState("");
   const [weatherOutput, setWeatherOutput] = useState(null);
+  const date = DateTime.now().toLocaleString(DateTime.DATETIME_FULL);
 
   function displayWeatherOutput(response) {
     setWeatherOutput({
@@ -51,7 +53,9 @@ export default function Weather() {
           <div class="col-6">
             <h1 className="city">{weatherOutput.city}</h1>
             <ul class="list-unstyled">
-              <li>Tuesday 16:00, {weatherOutput.description}</li>
+              <li>
+                {date}, {weatherOutput.description}
+              </li>
 
               <li>
                 Humidity: <strong>{weatherOutput.humidity}%</strong>, Wind:{" "}
