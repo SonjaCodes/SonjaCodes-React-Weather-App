@@ -45,21 +45,39 @@ export default function Weather() {
       </form>
       <hr />
       {weatherOutput && (
-        <div className="weatherOutput" class="row">
-          <div class="col-8">
-            <h1>{weatherOutput.city}</h1>
-            <p>{weatherOutput.description}
-            <br />
-              Humidity: {weatherOutput.humidity}%, Wind: {weatherOutput.wind}
-              km/h
-            </p>
+        <div
+          className="weatherOutput"
+          class="row d-flex justify-content-space-between">
+          <div class="col-6">
+            <h1 className="city">{weatherOutput.city}</h1>
+            <ul class="list-unstyled">
+              <li>Tuesday 16:00, {weatherOutput.description}</li>
+
+              <li>
+                Humidity: <strong>{weatherOutput.humidity}%</strong>, Wind:{" "}
+                <strong>
+                  {weatherOutput.wind}
+                  km/h
+                </strong>
+              </li>
+            </ul>
           </div>
 
-          <div class="col-1">
-            <img src={weatherOutput.icon} alt={weatherOutput.description} />
+          <div class="col-6">
+            <div class="temperature-container d-flex justify-content-end">
+              <img
+                src={weatherOutput.icon}
+                alt={weatherOutput.description}
+                className="weatherIcon"
+              />
+              <div>
+                <span className="currentTemperature">
+                  {weatherOutput.temperature}
+                </span>
+                <span className="units">°C</span>
+              </div>
+            </div>
           </div>
-          <div class="col-2">{weatherOutput.temperature}</div>
-          <div class="col-1">°C</div>
         </div>
       )}
     </div>

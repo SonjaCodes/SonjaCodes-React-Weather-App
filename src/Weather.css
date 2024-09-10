@@ -24,6 +24,37 @@
   width: 20%;
 }
 
-h1 {
+.city {
+  font-size: 38px;
   font-weight: bold;
+  line-height: 48px;
+  margin: 0;
+}
+
+.list-unstyled {
+  color: var(--sonjacodes-brand-color-secondary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.list-unstyled strong {
+  color: var(--sonjacodes-brand-color);
+}
+
+.weatherIcon {
+  height: 88px;
+  width: 88px;
+}
+
+.currentTemperature {
+  font-size: 88px;
+  font-weight: bold;
+  line-height: 88px;
+}
+
+.units {
+  font-size: 28px;
+  position: relative;
+  top: -45px;
 }
