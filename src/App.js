@@ -16,7 +16,7 @@ function App() {
           />
         </header>
         <main>
-          <Weather  />
+          <Weather />
           <Forecast />
         </main>
       </Container>

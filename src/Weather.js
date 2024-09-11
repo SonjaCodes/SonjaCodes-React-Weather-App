@@ -6,7 +6,9 @@ import { DateTime } from "luxon";
 export default function Weather() {
   const [city, setCity] = useState("");
   const [weatherOutput, setWeatherOutput] = useState("");
-  const date = DateTime.now().toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY);
+  const date = DateTime.now().toLocaleString(
+    DateTime.DATETIME_MED_WITH_WEEKDAY
+  );
 
   function displayWeatherOutput(response) {
     setWeatherOutput({
@@ -15,21 +17,26 @@ export default function Weather() {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: (
+        <img
+          src={`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
+          alt="weather icon"
+        />
+      ),
     });
   }
   function handleSubmit(event) {
     event.preventDefault();
-    if (city === "") {
-      alert("Please enter a city");
-    } else {
-      const apiKey = "5201594abea9f3e38b70e65b11a80c24";
-      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-      axios.get(apiUrl).then(displayWeatherOutput);
-    }
+    search();
   }
   function updateCity(event) {
     setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "5201594abea9f3e38b70e65b11a80c24";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeatherOutput);
   }
 
   return (
@@ -67,17 +74,13 @@ export default function Weather() {
 
           <div class="col-6">
             <div class="temperature-container d-flex justify-content-end">
-              <img
-                src={weatherOutput.icon}
-                alt={weatherOutput.description}
-                className="weatherIcon"
-              />
               <div>
-                <span className="currentTemperature">
-                  {weatherOutput.temperature}
-                </span>
-                <span className="units">°C</span>
+                {weatherOutput.icon}
               </div>
+              <span className="currentTemperature">
+                {weatherOutput.temperature}
+              </span>
+              <span className="units">°C</span>
             </div>
           </div>
         </div>
