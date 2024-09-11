@@ -6,20 +6,20 @@ export default function Footer() {
       This project was coded with love by{" "}
       <a href="https://github.com/SonjaCodes" target="_blank" rel="noreferrer">
         Sonja Kolmer
-      </a>{" "}
-      and is{" "}
+      </a>
+      . It is open-source on{" "}
       <a
         href="https://github.com/SonjaCodes/sonjacodes-react-weather-app"
         target="_blank"
         rel="noreferrer">
-        on Github
+        Github
       </a>{" "}
-      and{" "}
+      and hosted on{" "}
       <a
         href="https://app.netlify.com/sites/sonjacodes-react-weather-app/overview"
         target="_blank"
         rel="noreferrer">
-        hosted on Netlify
+        Netlify
       </a>
     </footer>
   );

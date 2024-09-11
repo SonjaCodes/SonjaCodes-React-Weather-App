@@ -4,9 +4,9 @@ import { useState } from "react";
 import { DateTime } from "luxon";
 
 export default function Weather() {
-  const [city, setCity] = useState(`Zurich`);
-  const [weatherOutput, setWeatherOutput] = useState(`Zurich`);
-  const date = DateTime.now().toLocaleString(DateTime.DATETIME_FULL);
+  const [city, setCity] = useState("");
+  const [weatherOutput, setWeatherOutput] = useState("");
+  const date = DateTime.now().toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY);
 
   function displayWeatherOutput(response) {
     setWeatherOutput({
@@ -44,7 +44,6 @@ export default function Weather() {
         />
         <input className="search-button" type="submit" value="Search" />
       </form>
-      <hr />
       {weatherOutput && (
         <div
           className="weatherOutput"
