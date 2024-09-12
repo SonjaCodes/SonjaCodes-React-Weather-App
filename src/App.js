@@ -1,6 +1,5 @@
 import "./App.css";
 import Weather from "./Weather";
-import Forecast from "./Forecast";
 import Footer from "./Footer";
 import Container from "react-bootstrap/Container";
 
@@ -16,8 +15,7 @@ function App() {
           />
         </header>
         <main>
-          <Weather />
-          <Forecast />
+          <Weather defaultCity="Zurich" />
         </main>
       </Container>
       <footer>

@@ -3,15 +3,16 @@ import axios from "axios";
 import { useState } from "react";
 import { DateTime } from "luxon";
 
-export default function Weather() {
-  const [city, setCity] = useState("");
-  const [weatherOutput, setWeatherOutput] = useState("");
+export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
+  const [weatherOutput, setWeatherOutput] = useState({ ready: false });
   const date = DateTime.now().toLocaleString(
     DateTime.DATETIME_MED_WITH_WEEKDAY
   );
 
   function displayWeatherOutput(response) {
     setWeatherOutput({
+      ready: true,
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
@@ -39,52 +40,55 @@ export default function Weather() {
     axios.get(apiUrl).then(displayWeatherOutput);
   }
 
-  return (
-    <div className="Search">
-      <form onSubmit={handleSubmit} className="search-form">
-        <input
-          type="search"
-          placeholder="Enter a city..."
-          required
-          class="search-form-input"
-          onChange={updateCity}
-        />
-        <input className="search-button" type="submit" value="Search" />
-      </form>
-      {weatherOutput && (
-        <div
-          className="weatherOutput"
-          class="row d-flex justify-content-space-between">
-          <div class="col-6">
-            <h1 className="city">{weatherOutput.city}</h1>
-            <ul class="list-unstyled">
-              <li>
-                {date}, {weatherOutput.description}
-              </li>
+  if (weatherOutput.ready) {
+    return (
+      <div className="Search">
+        <form onSubmit={handleSubmit} className="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            class="search-form-input"
+            onChange={updateCity}
+          />
+          <input className="search-button" type="submit" value="Search" />
+        </form>
+        {weatherOutput && (
+          <div
+            className="weatherOutput"
+            class="row d-flex justify-content-space-between">
+            <div class="col-6">
+              <h1 className="city">{weatherOutput.city}</h1>
+              <ul class="list-unstyled">
+                <li>
+                  {date}, {weatherOutput.description}
+                </li>
 
-              <li>
-                Humidity: <strong>{weatherOutput.humidity}%</strong>, Wind:{" "}
-                <strong>
-                  {weatherOutput.wind}
-                  km/h
-                </strong>
-              </li>
-            </ul>
-          </div>
+                <li>
+                  Humidity: <strong>{weatherOutput.humidity}%</strong>, Wind:{" "}
+                  <strong>
+                    {weatherOutput.wind}
+                    km/h
+                  </strong>
+                </li>
+              </ul>
+            </div>
 
-          <div class="col-6">
-            <div class="temperature-container d-flex justify-content-end">
-              <div>
-                {weatherOutput.icon}
+            <div class="col-6">
+              <div class="temperature-container d-flex justify-content-end">
+                <div>{weatherOutput.icon}</div>
+                <span className="currentTemperature">
+                  {weatherOutput.temperature}
+                </span>
+                <span className="units">°C</span>
               </div>
-              <span className="currentTemperature">
-                {weatherOutput.temperature}
-              </span>
-              <span className="units">°C</span>
             </div>
           </div>
-        </div>
-      )}
-    </div>
-  );
+        )}
+      </div>
+    );
+  } else {
+    search();
+    return "Loading...";
+  }
 }
