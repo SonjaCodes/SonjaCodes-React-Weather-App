@@ -17,7 +17,7 @@ export default function Weather(props) {
       date: date,
       city: response.data.city,
       coordinates: response.data.coordinates,
-      temperature: response.data.temperature.current,
+      temperature: Math.round(response.data.temperature.current),
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
