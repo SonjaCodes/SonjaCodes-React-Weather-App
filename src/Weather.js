@@ -1,4 +1,5 @@
 import "./Weather.css";
+import WeatherDetails from "./WeatherDetails";
 import axios from "axios";
 import { useState } from "react";
 import { DateTime } from "luxon";
@@ -13,19 +14,17 @@ export default function Weather(props) {
   function displayWeatherOutput(response) {
     setWeatherOutput({
       ready: true,
-      city: response.data.name,
-      temperature: Math.round(response.data.main.temp),
-      description: response.data.weather[0].description,
-      humidity: response.data.main.humidity,
+      date: date,
+      city: response.data.city,
+      coordinates: response.data.coordinates,
+      temperature: response.data.temperature.current,
+      description: response.data.condition.description,
+      humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
-      icon: (
-        <img
-          src={`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
-          alt="weather icon"
-        />
-      ),
+      icon: response.data.condition.icon,
     });
   }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -35,8 +34,8 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "5201594abea9f3e38b70e65b11a80c24";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiKey = "a5t17f04278fdb4bf8e3eb7e4o1ab606";
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeatherOutput);
   }
 
@@ -53,38 +52,7 @@ export default function Weather(props) {
           />
           <input className="search-button" type="submit" value="Search" />
         </form>
-        {weatherOutput && (
-          <div
-            className="weatherOutput"
-            class="row d-flex justify-content-space-between">
-            <div class="col-6">
-              <h1 className="city">{weatherOutput.city}</h1>
-              <ul class="list-unstyled">
-                <li>
-                  {date}, {weatherOutput.description}
-                </li>
-
-                <li>
-                  Humidity: <strong>{weatherOutput.humidity}%</strong>, Wind:{" "}
-                  <strong>
-                    {weatherOutput.wind}
-                    km/h
-                  </strong>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-6">
-              <div class="temperature-container d-flex justify-content-end">
-                <div>{weatherOutput.icon}</div>
-                <span className="currentTemperature">
-                  {weatherOutput.temperature}
-                </span>
-                <span className="units">°C</span>
-              </div>
-            </div>
-          </div>
-        )}
+        <WeatherDetails data={weatherOutput} />
       </div>
     );
   } else {
