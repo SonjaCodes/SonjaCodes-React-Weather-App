@@ -41,15 +41,11 @@
   color: var(--sonjacodes-brand-color);
 }
 
-.weatherIcon {
-  height: 88px;
-  width: 88px;
-}
-
 .currentTemperature {
   font-size: 88px;
   font-weight: bold;
   line-height: 88px;
+  margin-left: 15px;
 }
 
 .units {
