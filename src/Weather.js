@@ -1,5 +1,6 @@
 import "./Weather.css";
 import WeatherDetails from "./WeatherDetails";
+import Forecast from "./Forecast";
 import axios from "axios";
 import { useState } from "react";
 import { DateTime } from "luxon";
@@ -7,9 +8,7 @@ import { DateTime } from "luxon";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherOutput, setWeatherOutput] = useState({ ready: false });
-  const date = DateTime.now().toLocaleString(
-    DateTime.DATETIME_MED_WITH_WEEKDAY
-  );
+  const date = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 
   function displayWeatherOutput(response) {
     setWeatherOutput({
@@ -53,6 +52,11 @@ export default function Weather(props) {
           <input className="search-button" type="submit" value="Search" />
         </form>
         <WeatherDetails data={weatherOutput} />
+        <hr />
+        <Forecast
+          coordinates={weatherOutput.coordinates}
+          city={weatherOutput.city}
+        />
       </div>
     );
   } else {
