@@ -1,6 +1,6 @@
 :root {
   --sonjacodes-brand-color: #F53B9B;
-  --sonjacodes-brand-color-secondary: #d9d9d9;
+  --sonjacodes-brand-color-secondary: #c1c1c1;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
   background: white;
   border-radius: 15px;
   box-shadow: 0 0 40px 12px rgba(222, 218, 233, 0.608);
-  min-width: 370px;
+  min-width: 650px;
   max-width: 960px;
   padding: 50px;
 }
@@ -22,8 +22,4 @@ body {
   display: block;
   height: 20vmin;
   margin: 0 auto;
-}
-
-main {
-  padding: 30px 0;
 }

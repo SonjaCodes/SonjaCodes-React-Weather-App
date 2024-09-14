@@ -1,3 +1,4 @@
+import "./Forecast.css";
 import WeatherIcon from "./WeatherIcon";
 
 export default function ForecastDay(props) {
