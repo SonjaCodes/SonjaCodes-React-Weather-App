@@ -41,6 +41,10 @@
   color: var(--sonjacodes-brand-color);
 }
 
+.temperatureIcon {
+  font-weight: 100;
+}
+
 .currentTemperature {
   font-size: 88px;
   font-weight: bold;
