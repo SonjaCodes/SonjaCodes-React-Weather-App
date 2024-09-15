@@ -8,19 +8,21 @@ import { DateTime } from "luxon";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherOutput, setWeatherOutput] = useState({ ready: false });
-  const date = DateTime.now().toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY );
+  const date = DateTime.now().toLocaleString(
+    DateTime.DATETIME_MED_WITH_WEEKDAY
+  );
 
   function displayWeatherOutput(response) {
     setWeatherOutput({
-      ready: true,
-      date: date,
       city: response.data.city,
       coordinates: response.data.coordinates,
-      temperature: Math.round(response.data.temperature.current),
+      date: date,
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
-      wind: response.data.wind.speed,
       icon: response.data.condition.icon,
+      ready: true,
+      temperature: Math.round(response.data.temperature.current),
+      wind: response.data.wind.speed,
     });
   }
 

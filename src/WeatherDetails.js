@@ -1,10 +1,9 @@
+import "./Weather.css";
 import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherDetails(props) {
   return (
-    <div
-      className="WeatherDetails"
-      class="row d-flex align-items-center">
+    <div className="WeatherDetails" class="row d-flex align-items-center">
       <div class="col-6">
         <h1>{props.data.city}</h1>
         <ul class="list-unstyled">
