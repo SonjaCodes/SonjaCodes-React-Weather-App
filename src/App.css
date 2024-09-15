@@ -8,12 +8,16 @@ body {
   margin: 50px auto;
 }
 
+.container {
+  margin: 0 auto;
+  min-width: 650px;
+  max-width: 960px;
+}
+
 .App-Container {
   background: white;
   border-radius: 15px;
   box-shadow: 0 0 40px 12px rgba(222, 218, 233, 0.608);
-  min-width: 650px;
-  max-width: 960px;
   padding: 50px;
 }
 

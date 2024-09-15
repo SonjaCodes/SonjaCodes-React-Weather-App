@@ -3,26 +3,26 @@ import Weather from "./Weather";
 import Footer from "./Footer";
 import Container from "react-bootstrap/Container";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <Container className="App-Container">
-        <header className="App-header">
-          <img
-            src="SonjaCodes Logo.png"
-            className="SonjaCodes-logo"
-            alt="logo"
-          />
-        </header>
-        <main>
-          <Weather defaultCity="Zurich" />
-        </main>
-      </Container>
-      <footer>
-        <Footer />
-      </footer>
+      <div className="container">
+        <Container className="App-Container">
+          <header className="App-header">
+            <img
+              src="SonjaCodes Logo.png"
+              className="SonjaCodes-logo"
+              alt="logo"
+            />
+          </header>
+          <main>
+            <Weather defaultCity="Zurich" />
+          </main>
+        </Container>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
     </div>
   );
 }
-
-export default App;
