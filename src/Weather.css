@@ -32,7 +32,7 @@
 
 .Weather .list-unstyled {
   color: var(--sonjacodes-brand-color-secondary);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
 }
@@ -46,10 +46,11 @@
 }
 
 .Weather .currentTemperature {
-  font-size: 88px;
-  font-weight: bold;
-  line-height: 88px;
-  margin-left: 10px;
+  font-size: 68px;
+  font-weight: 600;
+  letter-spacing: -4px;
+  line-height: 68px;
+  margin-left: 15px;
 }
 
 .Weather .units {

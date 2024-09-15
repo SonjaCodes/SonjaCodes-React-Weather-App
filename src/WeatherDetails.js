@@ -4,7 +4,7 @@ export default function WeatherDetails(props) {
   return (
     <div
       className="WeatherDetails"
-      class="row d-flex justify-content-space-between">
+      class="row d-flex align-items-center">
       <div class="col-6">
         <h1>{props.data.city}</h1>
         <ul class="list-unstyled">
@@ -25,7 +25,7 @@ export default function WeatherDetails(props) {
       <div class="col-6">
         <div class="temperature-container d-flex justify-content-end">
           <div className="temperatureIcon">
-            <WeatherIcon code={props.data.icon} size={88} />
+            <WeatherIcon code={props.data.icon} size={68} />
           </div>
           <span className="currentTemperature">{props.data.temperature}</span>
           <span className="units">°C</span>
