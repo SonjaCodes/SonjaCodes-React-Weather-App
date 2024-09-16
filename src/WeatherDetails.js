@@ -8,7 +8,7 @@ export default function WeatherDetails(props) {
         <h1>{props.data.city}</h1>
         <ul class="list-unstyled">
           <li>
-            {props.data.date}, {props.data.description}
+            {props.data.date}, <strong>{props.data.description}</strong>
           </li>
 
           <li>
