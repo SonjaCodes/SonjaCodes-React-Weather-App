@@ -1,8 +1,8 @@
 import "./Weather.css";
 import Vue from "vue";
-import Skycon from "vue-skycon";
+import VueSkycons from "vue-skycon";
 
-Vue.component("skycon", Skycon);
+Vue.use(VueSkycons);
 
 export default function WeatherIcon(props) {
   const codeMapping = {
@@ -26,7 +26,7 @@ export default function WeatherIcon(props) {
     "mist-night": "FOG",
   };
   return (
-    <Skycon
+    <VueSkycons
       icon={codeMapping[props.code]}
       color={props.color}
       size={props.size}
