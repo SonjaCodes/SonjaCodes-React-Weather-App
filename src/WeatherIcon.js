@@ -1,5 +1,8 @@
 import "./Weather.css";
-import ReactAnimatedWeather from "react-animated-weather";
+import Vue from "vue";
+import VueSkycons from "vue-skycon";
+
+Vue.use(VueSkycons);
 
 export default function WeatherIcon(props) {
   const codeMapping = {
@@ -23,7 +26,7 @@ export default function WeatherIcon(props) {
     "mist-night": "FOG",
   };
   return (
-    <ReactAnimatedWeather
+    <VueSkycons
       icon={codeMapping[props.code]}
       color={props.color}
       size={props.size}

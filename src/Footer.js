@@ -20,7 +20,7 @@ export default function Footer() {
         target="_blank"
         rel="noreferrer">
         Netlify
-      </a>
+      </a>.
     </footer>
   );
 }

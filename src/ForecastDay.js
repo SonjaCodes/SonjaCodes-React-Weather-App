@@ -4,7 +4,7 @@ import WeatherIcon from "./WeatherIcon";
 export default function ForecastDay(props) {
   function day() {
     let date = new Date(props.data.time * 1000);
-    let day = (date.getDay() + 1) % 7;
+    let day = (date.getDay());
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     return days[day];
   }
