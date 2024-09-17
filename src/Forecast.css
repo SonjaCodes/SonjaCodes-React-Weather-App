@@ -14,6 +14,10 @@
   text-transform: uppercase;
 }
 
+.forecastIcon {
+  height: 88px;
+}
+
 .forecast-temperature {
   color: var(--sonjacodes-brand-color);
   font-size: 16px;

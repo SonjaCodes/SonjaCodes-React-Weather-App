@@ -1,33 +1,26 @@
 import "./Weather.css";
-import { WeatherSVG } from "weather-icons-animated";
+import { WeatherSvg } from "weather-icons-animated";
 
 export default function WeatherIcon(props) {
   const codeMapping = {
-    "clear-sky-day": "sunny",
-    "clear-sky-night": "clear-night",
-    "few-clouds-day": "partlycloudy",
-    "few-clouds-night": "partlycloudy",
-    "scattered-clouds-day": "partlycloudy",
-    "scattered-clouds-night": "partlycloudy",
-    "broken-clouds-day": "cloudy",
-    "broken-clouds-night": "cloudy",
-    "shower-rain-day": "pouring",
-    "shower-rain-night": "pouring",
-    "rain-day": "rainy",
-    "rain-night": "rainy",
-    "thunderstorm-day": "lightning-rainy",
-    "thunderstorm-night'": "lightning-rainy",
-    "snow-day": "snowy",
-    "snow-night": "snowy",
-    "mist-day": "fog",
-    "mist-night": "fog",
+    "clear-sky-day": { state: "sunny" },
+    "clear-sky-night": { state: "clear-night" },
+    "few-clouds-day": { state: "partlycloudy" },
+    "few-clouds-night": { state: "partlycloudy" },
+    "scattered-clouds-day": { state: "partlycloudy" },
+    "scattered-clouds-night": { state: "partlycloudy" },
+    "broken-clouds-day": { state: "cloudy" },
+    "broken-clouds-night": { state: "cloudy" },
+    "shower-rain-day": { state: "pouring" },
+    "shower-rain-night": { state: "pouring" },
+    "rain-day": { state: "rainy" },
+    "rain-night": { state: "rainy" },
+    "thunderstorm-day": { state: "lightning-rainy" },
+    "thunderstorm-night'": { state: "lightning-rainy" },
+    "snow-day": { state: "snowy" },
+    "snow-night": { state: "snowy" },
+    "mist-day": { state: "fog" },
+    "mist-night": { state: "fog" },
   };
-  return (
-    <WeatherSVG
-      icon={codeMapping[props.code]}
-      color={props.color}
-      size={props.size}
-      animate={true}
-    />
-  );
+  return <WeatherSvg state={codeMapping[props.code].state} />;
 }

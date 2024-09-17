@@ -43,6 +43,7 @@
 
 .Weather .temperatureIcon {
   font-weight: 100;
+  height: 68px;
 }
 
 .Weather .currentTemperature {
