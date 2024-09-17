@@ -4,9 +4,9 @@ import WeatherIcon from "./WeatherIcon";
 export default function WeatherDetails(props) {
   return (
     <div className="WeatherDetails" class="row d-flex align-items-center">
-      <div class="col-6">
+      <div className="col-6">
         <h1>{props.data.city}</h1>
-        <ul class="list-unstyled">
+        <ul className="list-unstyled">
           <li>
             {props.data.date}, <strong>{props.data.description}</strong>
           </li>
@@ -21,8 +21,8 @@ export default function WeatherDetails(props) {
         </ul>
       </div>
 
-      <div class="col-6">
-        <div class="temperature-container d-flex justify-content-end">
+      <div className="col-6">
+        <div className="temperature-container d-flex justify-content-end">
           <div className="temperatureIcon">
             <WeatherIcon code={props.data.icon} size={68} />
           </div>
