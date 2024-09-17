@@ -54,7 +54,12 @@
   margin-left: 15px;
 }
 
-.Weather .units {
-  font-size: 28px;
+.WeatherTemperature .units {
+  margin-left: 5px;
   position: relative;
+  top: -34px;
+}
+
+.WeatherTemperature .units a {
+  color: var(--sonjacodes-brand-color-secondary);
 }
